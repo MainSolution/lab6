@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+  <head>    <title> Critter </title></head>
+
+<body>
+	
+
+	<h1>Listar Monstruos</h1>
+	<table>
+	   <tr>
+	     <th>Nombre</th>
+	   </tr>
+	   <% Monstruo.all.each do |monstruo|%>
+	   <tr>
+	     <td><%= link_to monstruo.nombre, monstruo.nombre %> </td>
+	   </tr>
+           <% end %>
+         </table>
+</body>
+
+</html>

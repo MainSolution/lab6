@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+  <head>    <title> Critter </title></head>
+
+<body>
+	
+
+	<h1>Listar Monstruos</h1>
+	<table>
+	   <tr>
+	     <th>Nombre</th>
+	     <th>Descripcion</th>
+	   </tr>
+
+        <% tweets=Tweet.all%>
+	   <% Monstruo.all.each do |m|%>
+	   <tr>
+	     <td><%= link_to m.nombre, m %> </td>
+	   	 <td><%=m.descripcion %> </td> 
+	   	 
+	   	  <% if Tweet.where(monstruo_id: m.id).size >1 %>
+	   	    <td style="color: red"> CritterStar! </td>	
+	   	    <% end %>
+	   	    <td> <%= link_to "eliminar",m.destroy %></td>
+	   	    
+	   </tr>
+           <% end %>
+         </table>
+</body>
+
+</html>
